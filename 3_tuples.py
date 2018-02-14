@@ -12,7 +12,6 @@ print(x, y)
 x, y = y, x
 print(x, y)
 
-
 # These numbers looks familiar...
 
 n = [1, 1, 2, 3, 5, 8, 13, 21]
@@ -34,23 +33,26 @@ def fib(limit):
     current = 0
     nxt = 1
     while len(nums) < limit:
-        #nums.append(current)
-        #current, nxt = nxt, current + nxt
+        # nums.append(current)
+        # current, nxt = nxt, current + nxt
         temp = current
         current = nxt
         nxt = temp + current
         nums.append(current)
     return nums
 
+
 print(fib(7))
 
 
 def fib_2(limit):
-     nums = []
-     current, nxt = 0, 1
-     while len(nums) < limit:
-         current, nxt = nxt, current + nxt
-         nums.append(current)
-     return nums
+    nums = []
+    current, nxt = 0, 1
+    while len(nums) < limit:
+        current, nxt = nxt, current + nxt
+        nums.append(current)
+
+    return nums
+
 
 print(fib_2(7))
