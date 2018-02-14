@@ -31,9 +31,17 @@ def some_method():
         print('Oh, no network!')
         return
 
-    file = srv.download_file()
+    file = svr.download_file()
     save_file(file)
+
 
 # EAFF - Easier Ask For Forgiveness than for permission
 # try to leap, differentiate via exceptions
-try 
+try:
+    svr = DownloadService()
+    file = svr.download_file()
+    save_file(file)
+except SocketError as se:
+    print(f'No network, check the WiFi: {se}')
+except Exception as x:
+    print(f'Sorry, that  wasn\'t good: {x}')
